@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MongoDb" id="Project_219e" database="MongoDb" >
+	<schema name="user_managements" >
+		<table name="Carts" >
+			<column name="BasePrice" type="double" length="800" decimal="0" jt="8" />
+			<column name="product" type="string" jt="12" />
+			<column name="User" type="string" length="800" decimal="0" jt="12" />
+			<column name="TotalPrice" type="double" length="800" decimal="0" jt="8" />
+			<column name="ProductQty" type="double" length="800" decimal="0" jt="8" />
+			<column name="SalePrice" type="double" length="800" decimal="0" jt="8" />
+		</table>
+		<table name="Categories" >
+			<column name="Description" type="string" length="800" decimal="0" jt="12" />
+			<column name="Slug" type="string" length="800" decimal="0" jt="12" />
+			<column name="Image" type="string" length="800" decimal="0" jt="12" />
+			<column name="Name" type="string" length="800" decimal="0" jt="12" />
+		</table>
+		<table name="Orders" >
+			<column name="BillingAddress" type="string" length="800" decimal="0" jt="12" />
+			<column name="Products" type="string" length="800" decimal="0" jt="12" />
+			<column name="UserId" type="double" length="800" decimal="0" jt="8" />
+			<column name="ShippingAddress" type="string" length="800" decimal="0" jt="12" />
+			<column name="TransactionStatus" type="string" length="800" decimal="0" jt="12" />
+			<column name="TotalItems" type="double" length="800" decimal="0" jt="8" />
+		</table>
+		<table name="Products" >
+			<column name="BasePrice" type="double" length="800" decimal="0" jt="8" />
+			<column name="Desciption" type="string" length="800" decimal="0" jt="12" />
+			<column name="Sellprice" type="double" length="800" decimal="0" jt="8" />
+			<column name="ProductGallery" type="string" length="800" decimal="0" jt="12" />
+			<column name="Thumbnail" type="string" length="800" decimal="0" jt="12" />
+			<column name="Name" type="string" length="800" decimal="0" jt="12" />
+		</table>
+		<table name="Roles" >
+			<column name="Slug" type="string" length="800" decimal="0" jt="12" />
+			<column name="Name" type="string" length="800" decimal="0" jt="12" />
+		</table>
+		<table name="Tags" >
+			<column name="Slug" type="string" length="800" decimal="0" jt="12" />
+			<column name="Name" type="string" length="800" decimal="0" jt="12" />
+		</table>
+		<table name="Users" >
+			<column name="Role" type="string" length="800" decimal="0" jt="12" />
+			<column name="ProfileImg" type="string" length="800" decimal="0" jt="12" />
+			<column name="Email" type="string" length="800" decimal="0" jt="12" />
+			<column name="FirstName" type="string" length="800" decimal="0" jt="12" />
+			<column name="LastName" type="string" length="800" decimal="0" jt="12" />
+		</table>
+	</schema>
+	<connector name="MongoDb" database="MongoDb" driver_class="com.dbschema.MongoJdbcDriver" driver_jar="mongojdbc3.1.jar" driver_desc="No Authentication" host="localhost" port="27017" instance="management" user="admin" />
+	<layout name="Main Layout" id="Layout_182b" show_column_type="y" show_relation="name" >
+		<comment><![CDATA[MongoDb]]></comment>
+		<entity schema="user_managements" name="Carts" color="BED3F4" x="256" y="320" />
+		<entity schema="user_managements" name="Categories" color="BED3F4" x="512" y="320" />
+		<entity schema="user_managements" name="Orders" color="BED3F4" x="512" y="560" />
+		<entity schema="user_managements" name="Products" color="BED3F4" x="240" y="560" />
+		<entity schema="user_managements" name="Roles" color="BED3F4" x="64" y="304" />
+		<entity schema="user_managements" name="Tags" color="BED3F4" x="48" y="144" />
+		<entity schema="user_managements" name="Users" color="BED3F4" x="464" y="80" />
+		<group name="Collection &#039;Carts&#039;" color="ECF0F7" >
+			<entity schema="user_managements" name="Carts" />
+			<entity schema="user_managements" name="Categories" />
+			<entity schema="user_managements" name="Orders" />
+			<entity schema="user_managements" name="Products" />
+			<entity schema="user_managements" name="Roles" />
+			<entity schema="user_managements" name="Tags" />
+			<entity schema="user_managements" name="Users" />
+		</group>
+		<script name="Role" id="Editor_220e" language="SQL" >
+			<string><![CDATA[user_managements.Users.find()user_managements.Users.find()]]></string>
+		</script>
+	</layout>
+	<layout name="~Layout with Tools" id="Layout_1f4d" show_column_type="y" show_relation="name" >
+		<entity schema="user_managements" name="Carts" color="BED3F4" x="256" y="304" />
+		<entity schema="user_managements" name="Categories" color="BED3F4" x="512" y="304" />
+		<entity schema="user_managements" name="Orders" color="BED3F4" x="512" y="544" />
+		<entity schema="user_managements" name="Products" color="BED3F4" x="240" y="544" />
+		<entity schema="user_managements" name="Roles" color="BED3F4" x="48" y="368" />
+		<entity schema="user_managements" name="Tags" color="BED3F4" x="48" y="128" />
+		<entity schema="user_managements" name="Users" color="BED3F4" x="256" y="80" />
+		<group name="Carts" color="ECF0F7" >
+			<entity schema="user_managements" name="Carts" />
+			<entity schema="user_managements" name="Categories" />
+			<entity schema="user_managements" name="Orders" />
+			<entity schema="user_managements" name="Products" />
+			<entity schema="user_managements" name="Roles" />
+			<entity schema="user_managements" name="Tags" />
+			<entity schema="user_managements" name="Users" />
+		</group>
+		<script name="Sample Query Editor" id="Editor_bc0" language="SQL" >
+			<string><![CDATA[user_managements.Carts.find()
+
+//OR
+
+USE user_managements;
+db.Carts.find()
+
+//OR
+
+USE user_managements;
+db.getCollection('Carts').find()]]></string>
+		</script>
+		<browser id="Browse_e11" name="Sample Relational Data Explorer" confirm_updates="y" >
+			<browse_table schema="user_managements" entity="Carts" x="20" y="20" width="400" height="300" record_view="y" />
+		</browser>
+		<query id="Query_2214" name="Sample Query Builder" >
+			<query_table schema="user_managements" name="Carts" alias="Carts" x="48" y="48" >
+				<column name="BasePrice" />
+				<column name="product" />
+				<column name="User" />
+				<column name="TotalPrice" />
+				<column name="ProductQty" />
+				<column name="SalePrice" />
+			</query_table>
+		</query>
+	</layout>
+</project>
